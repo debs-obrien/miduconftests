@@ -6,7 +6,7 @@ test('test', async ({ page }) => {
   await page.goto('https://miduconf.com/');
 
   // Click text=#miduConf
-  await page.locator('text=#miduConf').click();
+  await page.locator('h1:has-text("#miduConf")').click();
 
   // Click a:has-text("Speakers")
   await page.locator('a:has-text("Speakers")').click();
