@@ -13,22 +13,18 @@ test('test', async ({ page }) => {
   await expect(page).toHaveURL('https://miduconf.com/#speakers');
 
   // Click text=Debbie O'Brien Senior Program Manager, Microsoft >> h3
-  await page.locator('text=Debbie O\'Brien Senior Program Manager, Microsoft >> h3').click();
+  await expect(page.locator('text=Debbie O\'Brien Senior Program Manager, Microsoft >> h3')).toBeVisible();
 
   // Click img[alt="Debbie O\'Brien"]
-  await page.locator('img[alt="Debbie O\\\'Brien"]').click();
+  await expect(page.locator('img[alt="Debbie O\\\'Brien"]')).toBeVisible;
 
   // Click a:has-text("Agenda")
   await page.locator('a:has-text("Agenda")').click();
   await expect(page).toHaveURL('https://miduconf.com/#agenda');
 
   // Click span:has-text("Agenda")
-  await page.locator('span:has-text("Agenda")').click();
+  await expect(page.locator('span:has-text("Agenda")')).toBeVisible();
 
   // Click text=17:00 15 min. 👋 Hola mundo, hola miduConf! Miguel Ángel Durán >> img
-  await page.locator('text=17:00 15 min. 👋 Hola mundo, hola miduConf! Miguel Ángel Durán >> img').click();
-
-  // Click text=17:00
-  await page.locator('text=17:00').click();
-
+  await expect(page.locator('text=17:00 15 min')).toBeVisible();
 });
